@@ -5,8 +5,10 @@ Stouts.wal-e
 
 Ansible role which performs continuous archiving of PostgreSQL WAL files
 
-* Install and setup [Wal-e](https://github.com/wal-e/wal-e)
-* Setup cronjobs
+-	Install and setup [Wal-e](https://github.com/wal-e/wal-e)
+-	Setup cronjobs
+
+**Note:** Add **wale_aws_s3_endpoint** var from this issue: https://github.com/wal-e/wal-e/issues/167
 
 #### Variables
 
@@ -79,7 +81,6 @@ Example:
 #### License
 
 Licensed under the MIT License. See the LICENSE file for details.
-
 
 #### Feedback, bug-reports, requests, ...
 
