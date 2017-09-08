@@ -41,3 +41,8 @@ wale_swift_prefix:
 # Set these credentials to enable upload to GOOGLE
 wale_gs_prefix:
 wale_google_application_credentials:
+
+# Python environment
+wale_virtualenv: /wale/env
+wale_virtualenv_python_version: python3
+wale_extra_requirements: []

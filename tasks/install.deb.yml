@@ -10,13 +10,31 @@
     - python-dev
     - python-lxml
     - python-pip
+    - virtualenv
 
 - name: Install requirements - pt. 2
-  pip: name={{item}}
+  pip:
+    name: "{{item}}"
+    state: latest
+    virtualenv: "{{ wale_virtualenv }}"
+    virtualenv_command: virtualenv
+    virtualenv_python: "{{ wale_virtualenv_python_version }}"
   with_items: [six, wal-e]
   when: not wale_latest
 
 - name: Install requirements - pt. 2
-  pip: name={{item}} state=latest
+  pip:
+    name: "{{item}}"
+    state: latest
+    virtualenv: "{{ wale_virtualenv }}"
+    virtualenv_command: virtualenv
+    virtualenv_python: "{{ wale_virtualenv_python_version }}"
   with_items: [six, wal-e]
   when: wale_latest
+
+- name: Install extra requirements - pt. 3
+  pip:
+    name: "{{item}}"
+    state: latest
+    virtualenv: "{{ wale_virtualenv }}"
+  with_items: "{{ wale_extra_requirements }}"
