@@ -37,3 +37,7 @@ wale_swift_tenant:
 wale_swift_user:
 wale_swift_password:
 wale_swift_prefix:
+
+# Set these credentials to enable upload to GOOGLE
+wale_gs_prefix:
+wale_google_application_credentials:

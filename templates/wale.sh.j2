@@ -27,6 +27,11 @@ export SWIFT_TENANT='{{ wale_swift_tenant }}'
 export SWIFT_USER='{{ wale_swift_user }}'
 export SWIFT_PASSWORD='{{ wale_swift_password }}'
 export WALE_SWIFT_PREFIX='{{ wale_swift_prefix }}'
+{% elif wale_gs_prefix %}
+export WALE_GS_PREFIX='{{ wale_gs_prefix }}'
+{% if wale_google_application_credentials != "" %}
+export GOOGLE_APPLICATION_CREDENTIALS='{{ wale_google_application_credentials }}'
+{% endif %}
 {% else %}
 echo "Please setup Wal-e settings in the role" 1>&2
 exit 2
