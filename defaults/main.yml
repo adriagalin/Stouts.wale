@@ -3,6 +3,7 @@
 wale_enabled: yes                     # The role is enabled
 wale_remove: no                       # Uninstall the role
 wale_latest: no                       # Install the latest WAL-E package
+wale_set_cron: yes                    # Install the cron jobs
 
 wale_home: /etc/wale                  # Where to place runscript
 wale_runscript_path: "{{ wale_home }}/wale.sh"
@@ -21,6 +22,8 @@ wale_initial_backup_command: "backup-push /var/lib/postgresql/{{postgresql_versi
 wale_aws_access_key_id:
 wale_aws_secret_access_key:
 wale_aws_region:
+# example: https+path://{{ wale_aws_region }}.amazonaws.com:443
+wale_aws_s3_endpoint: ""
 wale_aws_s3_prefix:
 
 # Set these credentials to enable upload to WABS
@@ -34,3 +37,7 @@ wale_swift_tenant:
 wale_swift_user:
 wale_swift_password:
 wale_swift_prefix:
+
+# Set these credentials to enable upload to GOOGLE
+wale_gs_prefix:
+wale_google_application_credentials:
